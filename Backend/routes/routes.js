@@ -3,14 +3,15 @@ import { addTodos ,deleteTodos , fetchAllTodos, updateTodo} from "../Contollers/
 import { logIn, logOut, signUp, signUpValidationRules } from "../Contollers/User.Controllers.js";
 import fetchuser from "../middleware/fetchuser.js";
 
-const router = express.Router();
+const userRouter = express.Router();
+const todosRouter = express.Router()
         
-router.get('/fetchAllTodos', fetchuser,fetchAllTodos)
-router.post('/addtodo' ,fetchuser,fetchuser,addTodos)
-router.delete('/deletetodo/:id',deleteTodos)
-router.put('/updatetodo/:id',updateTodo)
-router.post("/signup",signUpValidationRules, signUp)
-router.post('/login',signUpValidationRules,logIn)
-router.get('/logout',logOut)
+todosRouter.get('/fetchAllTodos', fetchuser,fetchAllTodos)
+todosRouter.post('/addtodo' ,fetchuser,fetchuser,addTodos)
+todosRouter.delete('/deletetodo/:id',deleteTodos)
+todosRouter.put('/updatetodo/:id',updateTodo)
+userRouter.post("/signup",signUpValidationRules, signUp)
+userRouter.post('/login',signUpValidationRules,logIn)
+userRouter.get('/logout',logOut)
 
-export default router   
+export  {todosRouter,userRouter}

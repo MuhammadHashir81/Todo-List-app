@@ -1,6 +1,5 @@
 import express from "express"
-import todosRouter from "./routes/routes.js"
-import userRouter from "./routes/routes.js"
+import {todosRouter,userRouter} from "../routes/routes.js"
 import mongoose from "mongoose"
 import cors from "cors"
 import cookieParser from "cookie-parser";
